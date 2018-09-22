@@ -12,6 +12,7 @@ import {GC_AUTH_TOKEN} from './constants';
 import {setContext} from 'apollo-link-context';
 import {InMemoryCache} from 'apollo-cache-inmemory';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -25,14 +26,15 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     ApolloModule,
     HttpLinkModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(apollo: Apollo, httpLink: HttpLink) {
-    const http = httpLink.create({uri: 'http:localhost:4000'});
+    const http = httpLink.create({uri: 'http://localhost:4000'});
     const auth = setContext((_, {headers}) => {
       const token = localStorage.getItem(GC_AUTH_TOKEN);
       if (!token) {

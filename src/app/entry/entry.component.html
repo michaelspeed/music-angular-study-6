@@ -6,16 +6,21 @@
     <h5 class="signin-title-secondary lh-4">It's free to signup and only takes a minute.</h5>
 
     <div class="row row-xs mg-b-10">
-      <div class="col-sm"><input type="text" class="form-control" placeholder="Firstname"></div>
-      <div class="col-sm mg-t-10 mg-sm-t-0"><input type="text" class="form-control" placeholder="Lastname"></div>
+      <div class="col-sm">
+        <input type="text" class="form-control" placeholder="Name" [(ngModel)]='name'>
+      </div>
     </div><!-- row -->
 
     <div class="row row-xs mg-b-10">
-      <div class="col-sm"><input type="email" class="form-control" placeholder="Email"></div>
-      <div class="col-sm mg-t-10 mg-sm-t-0"><input type="password" class="form-control" placeholder="Password"></div>
+      <div class="col-sm">
+        <input type="email" class="form-control" placeholder="Email" [(ngModel)]='email'>
+      </div>
+      <div class="col-sm mg-t-10 mg-sm-t-0">
+        <input type="password" class="form-control" placeholder="Password" [(ngModel)]='password'>
+      </div>
     </div><!-- row -->
 
-    <button class="btn btn-primary btn-block btn-signin">Sign Up</button>
+    <button class="btn btn-primary btn-block btn-signin" (click)="onSignUp()">Sign Up</button>
 
     <div class="signup-separator"><span>or signup using</span></div>
 
